@@ -159,7 +159,7 @@ async def buy_stars_logic(login: str, quantity: int, hide_sender: int) -> Dict[s
         transfers = []
         for msg in raw5["transaction"].get("messages", []):
             addr = msg["address"]
-            amount_ton = msg["amount"] / 1e9
+            amount_ton = float(msg["amount"]) / 1e9  # Конвертируем в float
             raw_payload = msg.get("payload", "")
             decoded = decode_payload_b64(raw_payload)
             transfers.append(await wm.transfer(addr, amount_ton, decoded))
@@ -218,7 +218,7 @@ async def buy_premium_logic(login: str, months: int, hide_sender: int) -> Dict[s
         transfers = []
         for msg in raw4["transaction"].get("messages", []):
             addr = msg["address"]
-            amount_ton = msg["amount"] / 1e9
+            amount_ton = float(msg["amount"]) / 1e9  # Конвертируем в float
             raw_payload = msg.get("payload", "")
             decoded = decode_payload_b64_premium(raw_payload)
             transfers.append(await wm.transfer(addr, amount_ton, decoded))
