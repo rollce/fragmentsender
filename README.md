@@ -116,9 +116,3 @@ curl -X POST http://localhost:8080/api/buyStars \
 - `quantity`: number of stars (minimum 50)
 - `hide_sender`: 0 (show sender) or 1 (hide sender)
 
-## 💎 Support
-Join our chat: https://t.me/fragmentapioff
-
-## 😄 Donate
-If you find this project useful, you can support it with TON:
-`UQCSQsHC3A3yz_gHAhYmDug6JJZStmp4rhshV6C6VLf8k9Hf` 
